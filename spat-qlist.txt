@@ -1,0 +1,13 @@
+0;
+test1 0;
+check 0;
+test2 0;
+1;
+test1 100;
+check 1; 
+1000 test2 500;
+2;
+test1 400;
+check 2;  
+2000 test2 900;
+3;
