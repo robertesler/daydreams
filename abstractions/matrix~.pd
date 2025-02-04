@@ -694,7 +694,7 @@
 #X connect 33 0 22 0;
 #X connect 34 0 25 0;
 #X connect 35 0 28 0;
-#X restore 575 201 pd F~;
+#X restore 573 201 pd F~;
 #X f 10;
 #N canvas 187 263 525 444 G~ 0;
 #X obj 41 318 outlet~;
@@ -919,7 +919,6 @@
 #X restore 723 109 pd I~;
 #X f 10;
 #X text 790 251 What a mess!;
-#X text 327 464 This abstraction creates a 9 x 7 matrix. The first inlet must get three numbers a \, b and c. a = input # \, b = output # and c = linear amplitude (0-1). So for example \, 0 1 0.5 will turn on input 0 through output 1 at 50% (or 93 dB).;
 #X text 339 413 0;
 #X text 400 413 1;
 #X text 460 413 2;
@@ -958,6 +957,7 @@
 #X connect 9 0 7 0;
 #X connect 9 0 8 0;
 #X restore 790 353 pd reset;
+#X text 327 464 This abstraction creates a 9 x 7 matrix. The first inlet must get three numbers a \, b and c. a = input # \, b = output # and c = linear amplitude (0-1). So for example \, [0 1 0.5( will turn on input 0 through output 1 at 50% (or 90 dB).;
 #X connect 0 0 46 0;
 #X connect 1 0 47 0;
 #X connect 2 0 48 0;
@@ -1081,7 +1081,7 @@
 #X connect 51 3 12 0;
 #X connect 51 4 13 0;
 #X connect 51 5 14 0;
-#X connect 51 5 45 0;
+#X connect 51 6 45 0;
 #X connect 52 0 9 0;
 #X connect 52 1 10 0;
 #X connect 52 2 11 0;
