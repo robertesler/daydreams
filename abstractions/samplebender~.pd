@@ -1,7 +1,7 @@
-#N canvas 923 97 820 477 12;
+#N canvas 663 25 820 477 12;
 #N canvas 0 22 450 278 (subpatch) 0;
-#X array sample 103989 float 2;
-#X coords 0 1 103989 -1 200 140 1;
+#X array sample 69868 float 2;
+#X coords 0 1 69868 -1 200 140 1;
 #X restore 560 235 graph;
 #X obj 558 119 soundfiler;
 #X floatatom 558 143 5 0 0 0 - - - 0;
@@ -18,9 +18,9 @@
 #X text 411 181 bend down A#2;
 #X msg 541 54 read -resize ../A#2.aiff sample;
 #X msg 558 89 read -resize ../D#4.aiff sample;
-#X msg 262 206 \; bend 1.4 \; detectFreq 63 \; thresh 40 \; freqTime 1000 \; sustainTime 150 \; releaseTime 800 \; attack 0.9 \; attackTime 10 \;;
-#X msg 394 206 \; bend 0.75 \; detectFreq 46 \; thresh 30 \; freqTime 2000 \; sustainTime 500 \; releaseTime 2000 \; attack 0.9 \; attackTime 10 \;;
 #X obj 59 131 tgl 19 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
+#X msg 262 206 \; bend 1.4 \; detectFreq 63 \; thresh 40 \; freqTime 1000 \; sustainTime 150 \; releaseTime 800 \; attack 0.9 \; attackTime 25 \;;
+#X msg 394 206 \; bend 0.75 \; detectFreq 46 \; thresh 30 \; freqTime 2000 \; sustainTime 500 \; releaseTime 2000 \; attack 0.9 \; attackTime 25 \;;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 4 0 7 0;
@@ -28,11 +28,11 @@
 #X connect 5 0 8 0;
 #X connect 5 0 4 1;
 #X connect 6 0 5 0;
-#X connect 6 0 16 0;
+#X connect 6 0 17 0;
 #X connect 8 0 7 0;
 #X connect 8 0 7 1;
 #X connect 11 0 5 0;
-#X connect 11 0 17 0;
+#X connect 11 0 18 0;
 #X connect 14 0 1 0;
 #X connect 15 0 1 0;
-#X connect 18 0 4 0;
+#X connect 16 0 4 0;
