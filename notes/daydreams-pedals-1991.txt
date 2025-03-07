@@ -1,0 +1,178 @@
+1
+play seq a1.sc
+pgmout 19 -> 1 (spat program)
+bendout 19 -> 1
+2
+stop seq a1.sc
+3
+play seq a2.sc
+4
+stop seq a2.sc
+5
+play seq a3.sc
+6
+stop seq a3.sc
+play seq a4.sc
+7
+stop seq a4.sc
+play seq a5.sc
+8
+stop seq a5.sc
+play seq a6.sc
+9
+stop seq a6.sc
+play seq a7.sc
+10
+stop seq a7.sc
+play seq a8.sc
+11
+stop seq a8.sc
+play seq a9.sc
+12
+stop seq a9.sc
+play seq a10.sc
+13
+stop seq a10.sc
+play seq a11.sc
+14
+stop seq a11.sc
+play seq a12.sc
+15
+stop seq a12.sc
+play seq a13.sc
+16
+stop seq a13.sc
+play seq a14.sc
+17
+stop seq a14.sc
+play seq a15.sc
+18
+stop seq a15.sc
+19
+set pgmout 19 -> 2
+set bendout 19 -> 2
+delay 200 ms
+play seq a19.sc
+20
+stop seq a19.sc
+delay 200 ms
+play seq a20.sc at 1536 speed (a little faster than normal)
+21
+opens gate from k&k midi input
+midi ctl 7 channels 1 2 3 8 ramp from 0 -> 127 -> 0 over 1650 ms
+midi bend on channels 1 2 3 8 from 0 -> 64 over 500 ms
+pgmout 19 -> 3
+bendout 19 -> 3
+pgmout 18 -> 58
+22
+play seq a22.sc
+23
+stop aeq a22.sc
+opens gate from k&k midi input
+delay 175 ms and echo all notes in
+delay 300 ms and echo all notes in with midi bend on channel 2 from 64 -> 95 in 500 ms
+24
+close gate from k&k midi input
+delay 200 ms
+play seq a24.sc
+25
+stop seq a24.sc
+delay 200 ms
+play seq a25.sc
+26
+stop seq a25.sc
+delay 200 ms
+play seq a26.sc
+opens gate from k&k midi input
+all notes to noteout channels 2 & 8 at vel 127
+note: channel 8 is reverb according to original max patch documentation
+27
+stop seq a26.sc
+pgmout 19 -> 4
+bendout 19 -> 4
+28
+opens gate from k&k midi input
+listen for midi note 75 (E-flat)
+delay 100 ms
+makenote 75 99 1200 to noteout 6
+bendout 6 from 64 -> 96 over 700 ms
+29
+close gate from k&k midi input for pedal #28
+opens gate from k&k midi input
+listens for midi note 73 (C-sharp)
+delay 300ms 
+makenote (69 & 75) 99 1000 to noteout 6
+bendout 6 from 64 -> 106 in 500 ms
+30
+close gate from k&k midi input for pedal #29
+play seq a30.sc
+delay 2000 ms 
+bendout 13 from 64 -> 0 in 3000ms
+ctlout 7 13 from 127 -> 0 in 6000ms
+delay 10000ms 
+reset bendout 13 and ctlout 13 to 64 & 127 respectively
+pgmout 19 -> 5
+bendout 19 -> 5
+open gate from k&k midi input
+listen for midi note 71 (B-natural)
+makenote 71 v 1400 to noteout 6
+bendout 6 from 64 -> 112 in 1000ms
+listen for midi note 82 (B-flat)
+makenote 81 v 1400 to noteout 6
+bendout 6 from 64 -> 112 in 1000ms
+31
+stop seq a30.sc
+play seq a31.sc
+delay 2000 ms 
+bendout 13 from 64 -> 0 in 3000ms
+ctlout 7 13 from 127 -> 0 in 6000ms
+delay 10000ms 
+reset bendout 13 and ctlout 13 to 64 & 127 respectively
+open gate from k&k midi input
+listen for midi note 71 (B-natural)
+makenote 71 v 1400 to noteout 6
+bendout 6 from 64 -> 112 in 1000ms
+listen for midi note 82 (B-flat)
+makenote 81 v 1400 to noteout 6
+bendout 6 from 64 -> 112 in 1000ms
+listen for midi note 88 (E-flat)
+makenote 88 v 1400 to noteout 6
+bendout 6 from 64 -> 112 in 1000ms
+32
+close gate from k&k midi input from pedal #31
+stop seq a31.sc
+pgmout 19 -> 6
+bendout 19 -> 6
+open gate from k&k midi input
+listen for midi note 57 (A-natural)
+delay 100 ms
+all notes to noteout 1 at velocity 15
+bendout 1 from 64 -> 42 in 500ms
+all notes to noteout 2 at velocity 15
+bendout 2 from 64 -> 42 in 500ms
+listen for midi note 55 (G-natural)
+all notes to noteout 1 at velocity 15
+bendout 1 from 64 -> 21 in 500ms
+33
+close gate from k&k midi input from pedal #32
+open gate from k&k midi input
+bendout 2 -> 64
+listen for midi note 65 (F-natural)
+delay 250 ms
+makenote n v 500
+all notes out to noteout 2 with velocity scaled to table a33.t (~0-41, 75+)
+turn off all gates if midi note 65 is played
+note: this basically is an echo for all notes played until F-natural is played
+34
+open gate from k&k midi input
+delay 100ms
+listen for midi note 85 (C-sharp)
+all notes to noteout 1 at velocity 16
+bendout 1 from 64 -> 48 in 500ms
+listen for midi note 83 (B-natural)
+all notes to noteout 2 at velocity 15
+bendout 2 from 64 -> 32 in 500ms
+listen for midi note 80 (G-sharp)
+all notes to noteout 3 at velocity 15
+bendout 3 from 64 -> 48 in 500ms
+35
