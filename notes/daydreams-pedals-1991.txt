@@ -223,10 +223,90 @@ close gate from k&k midi input from pedal #38
 40
 does everything from pedal #34
 and close gate from k&k midi input for pedal #41
+41
 open gate from k&k midi input
 all notes to noteout 1 & 2 at velocity 16
 bendout 1 & 2 from 64 -> 48 and 64 -> 32 respectively in 500 ms
 listens for midi note 70 (A-sharp*)
 delay 100 ms
-
 note:* this note is not actually correct based on the score
+This patcher also listens for any notes with a velocity of 66 or higher.  So the first bendout is for the first chord of the pedal, then the last bendout is for the final F and A in the phrase.  This would allegedly be less than a velocity of 66.
+42
+everything from #34
+43
+everything from #35
+44
+pgmout 19 -> 9
+bendout 19 -> 9
+ctlout 6 -> 127
+bendout 6 -> 64
+noteout 6 with velocity v
+delay 100 ms
+k&k midi input gate closed.
+delay 100 ms
+noteout 6 velocity to 0
+45
+**from this point I'm removing all notes for turning on/off the k&k midi input
+listen for midi note 62 (D-natural)
+makenote 62 v 1200 to noteout 7
+bendout 7 from 64 -> 106 in 1000 ms
+listen for midi note 61 (C-sharp)
+noteout 6 with velocity v
+delay 100 ms
+k&k midi input gate closed.
+delay 100 ms
+noteout 6 velocity to 0
+46
+listen for midi note 66 (F-sharp)
+play seq a46.sc
+listen for midi note 60 (C-natural)
+makenote 60 v 2400 to noteout 6
+bendout 6 from 64 ->106 in 2000ms
+47
+listen for midi note 64 (E-natural)
+makenote 64 v 1200 noteout 7
+bendout 7 64 -> 23 in 1000 ms
+listen for midi not 63 (E-flat)
+makenote 63 v 1200 noteout 6
+bendout 6 from 64 ->23 in 1000 ms
+listen for midi notes 57 and 53
+makenote (57 & 53) v 1200 to noteout 7
+bendout 7 from 64 -> 45 in 1000 ms
+after this the patch counts midi notes 88 and 91 (G and E-natural) 8 times
+then on the 6th count it makenotes (88 and 91) 100 175 to noteout 2
+bendout 2 from 64 -> 80 in x * 7 ms
+note: this same this can be accomplished by playing a47.sc
+48
+listen for midi note 64 (E-natural)
+makenote 64 v 1200 noteout 7
+bendout 7 64 -> 23 in 1000 ms
+listen for midi not 63 (E-flat)
+makenote 63 v 1200 noteout 6
+bendout 6 from 64 ->23 in 1000 ms
+49
+listen for midi note 64 (E-natural)
+makenote 64 v 1200 noteout 7
+bendout 7 64 -> 23 in 1000 ms
+listen for midi not 75 (E-flat)
+makenote 75 v 1200 noteout 7
+bendout 7 from 64 ->23 in 1000 ms
+50
+pgmout 19 -> 10
+bendout 19 -> 10
+play seq a50.sc
+delay 2000 ms
+bendout 13 from 64 -> 16 in 3000 ms
+listen for midi note 71 (B-natural)
+makenote 71 v 1400 noteout 6
+bendout 6 from 64 -> 127 in 1000 ms
+listen for midi note 82 (B-flat)
+makenote 82 v 1400 noteout 6
+bendout 6 from 64 -> 127 in 1000 ms
+listen for midi notes 73 and 75
+delay 200 ms 
+makenote (73 & 75) 60 500 to noteout 8
+bendout 8 from 64 -> 43 in 500 ms
+listen for midi notes 84 and 95 (C and B-natural)
+delay 200 ms and 400 ms
+makenotes (84 and 95) 60 1000 to noteout 8
+bendout 8 from 64 -> 43 in 500 ms
