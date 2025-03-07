@@ -160,7 +160,7 @@ bendout 2 -> 64
 listen for midi note 65 (F-natural)
 delay 250 ms
 makenote n v 500
-all notes out to noteout 2 with velocity scaled to table a33.t (~0-41, 75+)
+all notes out to noteout 2 with velocity scaled to table a33.t (0-127, 0-41)
 turn off all gates if midi note 65 is played
 note: this basically is an echo for all notes played until F-natural is played
 34
@@ -176,3 +176,57 @@ listen for midi note 80 (G-sharp)
 all notes to noteout 3 at velocity 15
 bendout 3 from 64 -> 48 in 500ms
 35
+close gate from k&k midi input from pedal #34
+open gate from k&k midi input
+all notes to noteout 1 & 2 at velocity 16
+bendout 1 & 2 from 64 -> 48 and 64 -> 32 respectively in 500 ms
+listens for midi note 70 (A-sharp*)
+delay 100 ms
+turn off gate from k&k midi input
+note:* this note is not actually correct based on the score
+36
+pgmout 19 -> 7
+bendout 19 -> 7
+all notes to noteout 8 (reverb) 
+37
+close gate from k&k midi input from pedal #35
+open gate from k&k midi input
+pgmout 19 -> 8
+bendout 19 -> 8
+bendout 1 -> 64
+delay 125 ms
+all notes to noteout 1 with velocity scaled to table tab1.t (0-127, 0-60)
+delay 250 ms
+all notes to noteout 2 with velocity scaled to table tab1.t 
+bendout 2 from 64 -> 127 in 500 ms
+listen for midi note 72 (C-natural)
+delay 100 ms
+all notes to noteout 1 at velocity 16
+bendout 1 from 64 -> 42 in 500ms
+listen for midi note 57 (A-natural)
+all notes to noteout 2 at velocity 16
+bendout 2 from 64 -> 42 in 500ms
+listen for midi note 55 (G-natural)
+all notes to noteout 3 at velocity 16
+bendout 3 from 64 -> 48 in 500ms
+listen for midi note 49 (D-flat)
+all notes to noteout 3 at velocity 16
+bendout 3 from 64 -> 21 in 500ms
+38
+close gate from k&k midi input from pedal #37
+open gate from k&k midi input
+bendout 1 -> 64
+all notes to noteout 1 with velocity less than 90 delayed 200ms
+all notes to noteout 2 with velocity greater than 90 delayed 400ms and bendout 2 from 64 -> 85 in 500 ms
+39
+close gate from k&k midi input from pedal #38
+40
+does everything from pedal #34
+and close gate from k&k midi input for pedal #41
+open gate from k&k midi input
+all notes to noteout 1 & 2 at velocity 16
+bendout 1 & 2 from 64 -> 48 and 64 -> 32 respectively in 500 ms
+listens for midi note 70 (A-sharp*)
+delay 100 ms
+
+note:* this note is not actually correct based on the score
