@@ -419,3 +419,69 @@ play seq a73.sc
 pgmout 19 -> 23
 bendout 19 -> 23
 play seq a74.sc
+75
+nothing 
+76
+pgmout 19 -> 24
+bendout 19 -> 24
+play seq a76.sc
+77
+pgmout 19 -> 25
+bendout 19 -> 25
+play seq a77.sc
+listen for midi note 79 (G)
+makenote 76 & 79 (E and G) v 1200 ms to noteout 6
+bendout 6 from 64 -> 16 in 1000 ms
+78
+turn off gate to k&k from #77
+79
+play seq a79.sc
+80
+turn on gate to k&k 
+81
+play seq a81.sc
+82
+turn on gate to k&k 
+listen for midi note 91 (G)
+makenote 91 & 95 v 900 ms to noteout 6
+bendout 6 from 64 -> 96 in 700 ms
+83
+pgmout 18 -> 58
+play seq a83h.sc
+play seq a83b.sc
+84
+play seq a84.sc
+85
+play seq a85h.sc
+listen for midi note 79 (G)
+makenote 75 & 79 & 89 & 93 v 1800/1200 ms to noteout 6/7
+bendout 6/7 from 64 -> 32 in 1000 ms
+86
+play seq a86.sc
+87
+listen for midi note 93 (A)
+makenote 93 89 79 75 v 700ms to noteout 6
+bendout 6 64 -> 32 in 500 ms
+listen for midi not 88 (E)
+make note 93 89 74 70 v 700 ms to noteout 7
+bendout 7 from 64 -> 32 in 500 ms
+listen to midi note 83 (B)
+makenote 83 79 v 700 ms to noteout 6
+bendout 6 64 -> 32 in 500 ms
+88
+play seq 88h.sc
+bendout 10 & bendout 12 from 32 -> 12 in 500
+delay 500 ms
+bendout 11
+48 -> 32 in 500 ms
+89
+play seq a89.sc
+listen for midi note 84 (C)
+makenote 81 & 84 (A and C) v 900 ms to noteout 6
+bendout 6 from 64 -> 32 in 700 ms
+90
+play seq a90h.sc
+turn on k&k midi input
+listen for midi note 85 (C#)
+makenote 82 & 85 (A & C#) to noteout 6
+bendout 6 from 64 -> 96 in 600 ms
