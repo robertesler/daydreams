@@ -310,3 +310,112 @@ listen for midi notes 84 and 95 (C and B-natural)
 delay 200 ms and 400 ms
 makenotes (84 and 95) 60 1000 to noteout 8
 bendout 8 from 64 -> 43 in 500 ms
+51
+play seq a51.sc
+delay 2000 ms
+bendout 14 from 64 -> 14 in 3000 ms
+52
+pgmout 58 -> 18
+listen for midi 64 (E-natural)
+makenote 64 v 700 to noteout 7
+bendout 7 from 64 ->23 in 500 ms
+listen for midi 63 (E-flat)
+makenote 64 v 700 to noteout 6
+bendout 6 from 64 ->23 in 500 ms
+ctlout 44 -> 127 ch 16 and 45 -> 127 ch 16
+k&k input to noteout 8 (reverb on)
+53
+ctlout 0 44 16 and 0 45 16
+(reverb off?)
+54
+play seq a54.sc
+55
+play seq a55.sc
+56
+play seq a56.sc
+bendout 11 from 64 -> 0 in 4000 ms
+bendout 12 from 64 -> 15 in 4000 ms
+57
+pgmout 19 -> 12
+bendout 19 -> 12 
+play seq a57.sc
+pgmout 18 -> 51
+ctlout 1 -> 62 ch 18
+k&k input to noteout 8 (reverb on)
+bendout 11 to 64
+bendout 12 to 64
+58
+pgmout 19 -> 13
+bendout 19 -> 13 
+bendout 11 from 64 -> 31 in 4000 ms
+bendout 12 from 64 -> 31 in 4000 ms
+59
+play a59.sc
+bendout 11 to 64
+bendout 12 to 64
+60
+play a60.sc
+61
+ctlout 7 -> 127 ch 9
+listen for midi note 60 (C)
+delay 200
+makenote 40 & 44 (E and G#) v 500 ms to noteout 1
+delay 400 
+makenote 57 & 60 (A and C) v 1000 ms to noteout 8
+(reverb on)
+62
+pgmout 19 -> 14
+bendout 19 -> 14
+play seq a62.sc
+bendout 11 from 64 -> 96 in 4000 ms
+bendout 12 from 64 -> 96 in 4000 ms
+63
+pgmout 19 -> 15
+bendout 19 -> 15
+delay 150 ms
+play seq a63.sc
+bendout 11 & 12 to 64
+64
+listen for midi note 59 (B-natural)
+makenote 57 & 59 (A and B) v 1200 ms to noteout 6
+bendout 6 from 64 -> 90 in 1000 ms
+65
+listen for midi note 59 (B-natural)
+makenote 57 & 59 (A and B) v 1200 ms to noteout 6
+bendout 6 from 64 -> 90 in 1000 ms
+66
+pgmout 19 -> 16
+bendout 19 -> 16
+delay 500
+play seq a66.sc
+67
+pgmout 19 -> 17
+bendout 19 -> 17
+delay 150
+play seq a67.sc
+68
+pgmout 19 -> 18
+bendout 19 -> 18
+play seq a68.sc
+69
+pgmout 19 -> 19
+bendout 19 -> 19
+70
+pgmout 19 -> 20
+bendout 19 -> 20
+71
+pgmout 19 -> 21
+bendout 19 -> 21
+play seq a71.sc
+72
+pgmout 18 -> 58
+listen for any note not midi note 0
+all notes to noteout 8 (reverb)
+73
+pgmout 19 -> 22
+bendout 19 -> 22
+play seq a73.sc
+74
+pgmout 19 -> 23
+bendout 19 -> 23
+play seq a74.sc
