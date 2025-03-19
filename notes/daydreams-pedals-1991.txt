@@ -485,3 +485,62 @@ turn on k&k midi input
 listen for midi note 85 (C#)
 makenote 82 & 85 (A & C#) to noteout 6
 bendout 6 from 64 -> 96 in 600 ms
+91
+pgmout 19 -> 26
+bendout 19 -> 26
+play seq a91.sc
+listen to midi notes 76 and 79 (G and E)
+makenote 76 & 79 v 700 to noteout 6 & 7
+bendout 6 & 7 from 64 -> 32 and 64 -> 16 respectively in 500 ms
+92
+turn on k&k midi in
+listen for midi note 66 (F#) then turn off k&k input
+play seq a92h.sc
+delay 500 ms
+bendout 9 & 11 from 64 -> 48 in 500 ms
+note: basically this adds some pitch bend effect to the a92h.sc seq.
+93
+pgmout 19 -> 27
+bendout 19 -> 27
+play seq a93.sc
+listen for midi note 91 (G)
+then 'record' the performer playing 8 attacks of G & E
+94
+delay 400 ms
+pgmout 19 -> 29
+bendout 19 -> 29
+playback the 'recording' from #93
+95
+pgmout 19 -> 28
+bendout 19 -> 28
+listen for midi notes 66 and 76 (F# and E)
+if midi note 66 play seq a95.sc
+if midi note 76 play seq a95h.sc
+then slow down playback by 10% each time it plays back
+96
+listen for midi notes 66 and 76 (F# and E)
+makenote 66 & 76 v100 5000 ms to noteout 6
+ctlout 7 -> 127 ch 6
+97
+listen for midi note 52 (E)
+turn on gate to k&k 
+play note 52 through noteout 6
+bendout 6 to 64
+98
+listen for midi note 66 (F#)
+makenote 66 v for 5000 ms
+note: I believe the E natural in the score is not actually executed.  
+99
+listen for midi notes 52, 60, 66, 65, 79
+delay 100 ms
+then makenote for each of the above 1 whole step above
+delay 200 ms
+then make all midi notes 52, 60, 65, 66, 79
+if the midi note is F# or F then makenote for 5000 ms
+100
+listen for midi notes 52 66 79
+same before 
+if midi note is 66 then makenote for 5000 ms
+listen for midi note 60
+then play seq a100.sc
+slow down by aroun 8% each time it's played back
