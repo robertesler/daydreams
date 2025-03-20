@@ -544,3 +544,157 @@ if midi note is 66 then makenote for 5000 ms
 listen for midi note 60
 then play seq a100.sc
 slow down by aroun 8% each time it's played back
+101
+k&k input on
+delay 50 ms
+all midi notes add 2
+delay 100 ms
+repeat original midi note
+ctlout 7 -> 127 ch 6
+note: this is similar to an upper mordent
+102
+listen for midi note 66 (F#)
+makenote 66 100 1000 to noteout 5
+103
+listen for midi note 75 (E-flat)
+send midi notes 66 and 75 to noteout 16 for 100 ms envelope
+104
+k&k input on
+delay 50 ms
+all midi notes add 2
+delay 100 ms
+repeat original midi note
+all notes to noteout 8
+bendout 10 -> 64
+105
+listen for midi note 66 (F#)
+set a counter to 30
+then count 7 attacks 
+send 30 + attack number to pgmout 19 (spat)
+and send 30 + attach number to bendout 19
+then each attack alternates playback of seq a105.sc and b105.sc respectively
+note: this scene will change the spat number for each attack numbers 30-37
+then it plays the midi sequences a105.sc and b105.sc, the player should only play the first attack
+the midi sequences play the second staccato note.
+106
+pgmout 19 -> 38
+bendout 19 -> 38
+ctlout 7 -> 127 ch 9 and 10
+play seq a106.sc
+107
+k&k input on
+if the attack is louder than velocity -> 99
+delay 50 ms
+all midi notes add 2
+delay 100 ms
+repeat original midi note
+all notes to noteout 8
+108
+pgmout 19 -> 39
+bendout 19 -> 39
+play seq a108.sc
+listen for midi note 96 (C)
+delay 100 ms
+repeat all notes after 175 ms delay
+delay 300 ms
+makenotes x 60v 1200 ms to noteout 6 & 8
+bendout 6 & 8 from 64 -> 96 in 1000 ms
+109
+pgmout 19 -> 40
+bendout 19 -> 40
+play seq a109b.sc
+play seq a109h.sc
+if any attacks are forte send to noteout 2 with reverb
+110
+k&k input on
+listen to midi note 93
+delay 50 ms
+all midi notes add 2
+delay 100 ms
+repeat original midi note
+if midi note equals 93 then the velocity is 127, and turn off the gate
+all other notes to noteout 2 with velocity of 20
+note: in the score midi note 93 is A5, but it should Ab5 or midi note 
+111
+play seq a111.sc
+k&k input on
+all notes to noteout 2 at 127 velocity
+listen for midi note 81 (B-flat)
+turn of k&k input 
+112
+k&k input on
+delay 50 ms
+all midi notes add 2
+delay 100 ms
+repeat original midi note
+all notes to noteout 2
+113
+pgmout 19 -> 41
+bendout 19 -> 41
+play seq a113.sc
+114
+play seq a114b.sc
+delay 2000 ms
+play seq a114h.sc
+all notes send to bendout 1, 2, 3
+listen for midi note 66 (F#)
+turn off the k&k input
+note: for this scene basically all notes are bent 64-> 48 for 500 ms
+115
+k&k input on
+delay 50 ms
+all midi notes add 2
+delay 100 ms
+repeat original midi note
+all notes to noteout 2
+116
+play a116h.sc
+all notes send to bendout 1, 2, 3
+listen for midi note 81 (B-flat)
+turn off the k&k input
+note: for this scene basically all notes are bent 64-> 48 for 500 ms
+117
+listen for midi note 79 (G)
+makenote 79 & 83 (G & B) v 1200 ms
+bendout from 64 -> 32 in 1000 ms
+118
+makenote 66 & 68 (F# & G#)  v 1200 ms to noteout 6
+bendout 6 from 64 -> 32 in 1000 ms
+makenote 53 & 57 (A & F) noteout 7
+bendout 7 from 64 -> 48 in 1000 ms
+119
+stop seq a114b.sc
+120
+play seq a120.sc
+121
+pgmout 18 -> 58
+ctlout 1 -> 68 ch 18
+pgmout 19 -> 42
+bendout 19 -> 42
+all notes to noteout 8 (reverb)
+122
+turn off reverb
+123
+play seq a123.sc
+124
+play seq a124.sc
+125
+turn on reverb
+126
+turn off reverb
+127
+listen for midi note 59 (B)
+set bendout 6 to 64
+midi notes 46 49 59 63 at velocity 20 to noteout 6
+listen for midi note 66 (F#)
+set velocity to 0 to noteout 6
+note: this basically sustains the chord until the F# is hit
+128
+play seq a128.sc
+129
+play seq a129.sc
+130
+delay 4000 ms
+then bendout 9 from 64 -> 16 in 3000 ms
+delay 500 ms 
+ctlout 7 from 127 -> 0 in 3000 ms ch 9 (I think this is the volume)
