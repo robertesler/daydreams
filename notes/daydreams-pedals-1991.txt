@@ -697,4 +697,143 @@ play seq a129.sc
 delay 4000 ms
 then bendout 9 from 64 -> 16 in 3000 ms
 delay 500 ms 
-ctlout 7 from 127 -> 0 in 3000 ms ch 9 (I think this is the volume)
+ctlout 7 from 127 -> 0 in 3000 ms ch 9 (I think this is the volume for the sampler)
+131
+reverb on
+pgmout 18 -> 51
+ctlout 1 -> 73 ch 18
+132
+reverb off
+133
+play seq a133.sc
+listen for midi notes 65 66 68 69 (F, F#, G#, A)
+makenotes 66 & 68 100 1000 to noteout 4
+if midi note is 69 (A) makenote 69 5 1400 to noteout 6
+bendout 6 64 -> 127 in 1000
+if midi note is 65 (F)
+turn off gate for the F# makenote, otherwise G# and A pitchbend persist
+134
+play seq a134.sc
+isten for midi notes 66 68 69 (F#, G#, A)
+makenotes 66 & 68 50 1000 to noteout 4
+if midi note is 69 (A) makenote 69 20 1400 to noteout 6
+bendout 6 64 -> 127 in 1000
+delay 100 ms
+turn off k&k input
+135
+play seq a135.sc
+136
+play seq a136.sc
+137
+stop seq a136.sc
+138
+play seq a138.sc
+139
+stop seq a138.sc
+140
+play seq a140.sc
+141
+play seq a141.sc
+142
+play seq a142.sc
+143
+play seq a143.sc
+144
+play seq a144.sc
+145
+play seq a145.sc
+146
+play seq a146.sc
+147
+play seq a147.sc
+148
+play seq a148.sc
+149
+play seq a149.sc
+150
+play seq a150.sc
+151
+play seq a151.sc
+152
+play seq a152.sc
+153
+stop seq a152.sc
+154
+listen for midi notes 42 & 46 (Gb and Bb)
+makenote 42 & 46, 60 1000 ms to noteout 4
+155
+listen for midi notes 51, 68 & 88 (Eb, Ab and E)
+delay 175 ms
+all notes out to noteout 8
+delay 300 ms
+note: this is an echo and reverb, if the velocity is above 99 trigger the delay
+on the last chord, there are two attacks plus a pitch bend up
+bendout 8 from 64 -> 96 in 1000 ms
+then if the pitch is midi note 88 turns off reverb 
+156
+pgmout 18 -> 51
+listen for midi notes 66, 68, 86 & 89
+makenote 66, 68, 86 & 89, v 1000 ms to noteout 4
+reverb on
+157
+listen for midi notes 66 & 68
+makenote 66 & 68, 20 5000 ms to noteout 6
+158
+play seq a158.sc
+listen for midi note 69 (A)
+makenote 69 20 800 ms to noteout 6 & 7
+bendout 6 & 7 from 64 -> 85 in 500 ms 
+159
+listen for midi notes 67 & 69
+if 69
+makenote 69 20 800 to noteout 6
+bendout 6 from 64 -> 85 in 500 ms
+if 67
+makenote 67 20 800 to noteout 5
+bendout 7 from 64 -> 85 in 800 ms
+160
+play seq a160.sc
+161
+pgmout 19 -> 44
+bendout 19 -> 44
+play seq a161.sc
+162
+listen for midi note 69 (A)
+makenote 69 20 1000 ms to noteout 6 & 7
+bendout 6 & 7 from 64 -> 85 in 800 ms 
+163
+pgmout 19 -> 45
+bendout 19 -> 45
+164
+play seq a164.sc
+165
+play seq a165.sc
+166
+play seq a166.sc
+167
+play seq a167.sc
+168
+play seq a168.sc
+169
+play seq a169.sc
+listen for midi notes 43, 50, 82 & 88 (G, D, Bb, E)
+if 43 or 50
+makenote 43 | 50, 5 1000 ms noteout 6
+bendout 6 from 64 -> 16 in 700 ms
+if 82 or 88
+makenote 82 | 88, 5 in 1400 ms to noteout 7
+bendout 7 from 64 -> 112
+170
+listen for midi notes 43, 40, 53, 55, 77, 79, 82, & 88 (G< D, F, G, F,G,Bb and E)
+if 43 or 50
+makenote 43 | 50, 5 1000 ms noteout 6
+bendout 6 from 64 -> 16 in 700 ms
+if 82 or 88
+makenote 82 | 88, 5 in 800 ms to noteout 7
+bendout 7 from 64 -> 112 in 800 ms
+otherwise if neither of those 
+makenote x 60 1000 ms to noteout 4
+171
+pgmout 19 -> 46
+bendout 19 -> 46
+play seq a171.sc
