@@ -545,6 +545,7 @@
 #X text 543 479 Just for testing purposes right now.;
 #X msg 279 488 \; resetlines bang \; spat-mtx-reset bang \; matrix-reset bang \;;
 #X obj 543 37 declare -path ../abstractions/;
+#X obj 279 442 r reset-spat;
 #X connect 12 0 13 0;
 #X connect 12 1 19 0;
 #X connect 15 0 14 0;
@@ -555,3 +556,4 @@
 #X connect 33 0 31 0;
 #X connect 35 0 36 0;
 #X connect 37 0 31 0;
+#X connect 41 0 21 0;
