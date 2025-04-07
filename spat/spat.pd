@@ -580,6 +580,7 @@
 #X obj 50 544 r matrix;
 #X obj 271 624 s~ spat-loopback;
 #X text 396 625 to reverb;
+#X text 43 268 Original 2003 spat was developed by Patrick Delges;
 #X connect 12 0 13 0;
 #X connect 12 1 19 0;
 #X connect 15 0 14 0;
