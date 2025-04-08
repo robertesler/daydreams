@@ -85,7 +85,6 @@ delay 200 ms
 play seq a26.sc
 opens gate from k&k midi input
 all notes to noteout channels 2 & 8 at vel 127
-note: channel 8 is reverb according to original max patch documentation
 27
 stop seq a26.sc
 pgmout 19 -> 4
