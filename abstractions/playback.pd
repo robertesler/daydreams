@@ -1,4 +1,4 @@
-#N canvas 253 101 788 508 12;
+#N canvas 253 101 788 585 12;
 #X obj 80 60 r playback1;
 #X obj 80 267 throw~ out;
 #X obj 131 331 catch~ out;
@@ -21,7 +21,7 @@
 #X floatatom 36 379 5 0 0 0 - - - 0;
 #X obj 36 355 line;
 #X obj 36 330 r bend-steps;
-#X obj 36 475 s~ sampler;
+#X obj 36 505 s~ sampler;
 #X obj 220 332 r~ sampler;
 #X obj 50 429 r~ pitchbending;
 #X text 59 451 This comes from our pitchbending subpatch;
@@ -47,6 +47,8 @@
 #X obj 517 144 r playback4-vol;
 #X msg 611 365 \; playback1-vol 1 \; playback2-vol 1 \; playback3-vol 1 \; playback4-vol 1 \;;
 #X obj 610 341 loadbang;
+#X obj 63 476 r~ synthbender;
+#X text 118 497 This comes from our synthbender subpatch;
 #X connect 0 0 14 0;
 #X connect 2 0 18 1;
 #X connect 5 0 13 0;
@@ -84,3 +86,4 @@
 #X connect 44 0 38 0;
 #X connect 45 0 42 0;
 #X connect 47 0 46 0;
+#X connect 48 0 22 0;
