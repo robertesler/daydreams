@@ -1,4 +1,4 @@
-1
+f1
 play seq a1.sc
 pgmout 19 -> 1 (spat program)
 bendout 19 -> 1
@@ -157,7 +157,7 @@ close gate from k&k midi input from pedal #32
 open gate from k&k midi input
 bendout 2 -> 64
 listen for midi note 65 (F-natural)
-delay 250 ms
+delay 250 ms if velocity is greater than 75
 makenote n v 500
 all notes out to noteout 2 with velocity scaled to table a33.t (0-127, 0-41)
 turn off all gates if midi note 65 is played
