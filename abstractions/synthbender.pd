@@ -1,4 +1,4 @@
-#N canvas 211 34 1038 593 12;
+#N canvas 211 39 1038 593 12;
 #X declare -path ./abstractions;
 #X text 526 68 Much of the older sampler's used variable speed plaback to execute pitch bending. But since the essense of a marimba tone is sinusoidal \, I'm experimenting with using a simple synth to create a pitch bend. This could create the same effect when combined with sigmund~ and the acoustic sound of a marimba. This could be adapted for multiple pitches too \, but right now this would be used for single pitches.;
 #X obj 526 29 declare -path ./abstractions;
@@ -615,7 +615,7 @@
 #X connect 47 0 37 2;
 #X connect 50 0 48 0;
 #X restore 33 376 pd synths;
-#X msg 522 389 \; freq 60 63 67 72 75 79 \; bend 1.2 1.2 1.2 1.2 1.2 1.2 \; sustainTime 150 \; releaseTime 800 \; attack 0.9 \; attackTime 25 \;;
+#X msg 522 409 \; freq 60 63 67 72 75 79 \; bend 1.2 1.2 1.2 1.2 1.2 1.2 \; sustainTime 150 \; releaseTime 800 \; attack 0.9 \; attackTime 25 \;;
 #X msg 523 294 \; freq 0 0 0 0 0 0 \; bend 1 1 1 1 1 1 \; synthbender-pitchdetection-on 0 \; synthbender-all-on 0 \; pitchdetection-thresh 40 \;;
 #X connect 2 0 5 0;
 #X connect 3 0 5 1;

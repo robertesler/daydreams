@@ -244,6 +244,7 @@ delay 100 ms
 k&k midi input gate closed.
 delay 100 ms
 noteout 6 velocity to 0
+note: basically this patcher creates note 60 (C4) on the first attack and stops it on the second attack, basically prolonging the sustain of the marimba. 
 45
 **from this point I'm removing all notes for turning on/off the k&k midi input
 listen for midi note 62 (D-natural)
@@ -274,7 +275,7 @@ bendout 7 from 64 -> 45 in 1000 ms
 after this the patch counts midi notes 88 and 91 (G and E-natural) 8 times
 then on the 6th count it makenotes (88 and 91) 100 175 to noteout 2
 bendout 2 from 64 -> 80 in x * 7 ms
-note: this same this can be accomplished by playing a47.sc
+note: the same this can be accomplished by playing a47.sc
 48
 listen for midi note 64 (E-natural)
 makenote 64 v 1200 noteout 7
