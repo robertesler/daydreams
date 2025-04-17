@@ -323,10 +323,10 @@ listen for midi 63 (E-flat)
 makenote 64 v 700 to noteout 6
 bendout 6 from 64 ->23 in 500 ms
 ctlout 44 -> 127 ch 16 and 45 -> 127 ch 16
-k&k input to noteout 8 (reverb on)
+k&k input to noteout 8 (Eb triggers reverb on)
 53
 ctlout 0 44 16 and 0 45 16
-(reverb off?)
+(reverb off)
 54
 play seq a54.sc
 55
