@@ -674,9 +674,10 @@
 #X obj 199 206 output~;
 #X obj 77 156 s~ testL;
 #X obj 191 158 s~ testR;
-#X msg 284 445 \; playback-ssb-on 1 \; ssb-bend -75 1000 \;;
-#X msg 20 388 \; playback3 open ../audio/a92h.wav \; playback3 start \; playback1 stop \;;
-#X obj 284 376 del 500;
+#X msg 443 383 \; playback-reset bang \; reverb-reset bang \;;
+#X msg 284 445 \; ssb-bend 25 5000 \;;
+#X obj 284 376 del 2000;
+#X msg 20 388 \; playback4 open ../audio/a92h.wav \; playback4 start \; playback1 stop \; playback-ssb-on 1 \;;
 #X connect 0 0 2 0;
 #X connect 1 0 4 0;
 #X connect 2 0 16 0;
@@ -688,11 +689,11 @@
 #X connect 6 0 0 0;
 #X connect 6 0 1 0;
 #X connect 6 0 10 0;
-#X connect 9 0 19 0;
+#X connect 9 0 21 0;
 #X connect 9 0 20 0;
 #X connect 11 0 9 0;
 #X connect 12 0 10 0;
-#X connect 14 0 18 0;
+#X connect 14 0 19 0;
 #X connect 20 0 14 0;
 #X restore 28 345 pd testing;
 #X restore 189 331 pd guts;
