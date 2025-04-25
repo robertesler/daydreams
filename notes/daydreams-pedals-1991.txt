@@ -1,4 +1,4 @@
-f1
+1
 play seq a1.sc
 pgmout 19 -> 1 (spat program)
 bendout 19 -> 1
