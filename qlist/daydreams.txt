@@ -80,7 +80,7 @@ spatpgm 3;
 spatpgm-go bang;
 reverb .5 1000;
 ssb .25 250;
-ssb-bend 100 1000
+ssb-bend 100 1000;
 1000 reverb 0 1500;
 ssb-bend 0 1500;
 ssb 0 1500;

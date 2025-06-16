@@ -90,7 +90,7 @@ See the code below.
    
    float dummy = 0;
    Envelope env = new Envelope();
-   float thresh = 50; // change this match just above your baseline
+   float thresh = 35; // change this match just above your baseline
    int dCounter = 0;
    boolean bang = false;
    
@@ -104,11 +104,12 @@ See the code below.
         dCounter = 0;
      }
      
-     if(bang == true && dCounter++ > 200)
+     if(bang == true && dCounter++ > 600)
      {
         try 
         {
            midi.sendMyMessage(36);
+           println("Trigger!");
         }
         catch (InvalidMidiDataException e) {
           e.printStackTrace();
