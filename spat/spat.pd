@@ -583,7 +583,7 @@
 #X msg 448 366 1;
 #X floatatom 448 414 5 0 0 0 - - - 0;
 #X obj 448 437 s spatpgm;
-#N canvas 78 612 686 382 stereo-mixdown 0;
+#N canvas 78 612 686 382 stereo-mixdown 1;
 #X obj 19 30 inlet~;
 #X obj 72 30 inlet~;
 #X obj 125 30 inlet~;
@@ -651,6 +651,8 @@
 #X obj 81 168 *~ 0.7;
 #X obj 35 216 *~ 0.7;
 #X obj 89 216 *~ 0.7;
+#X obj 135 331 env~ 8192;
+#X floatatom 135 355 5 0 0 0 - - - 0;
 #X connect 0 0 26 0;
 #X connect 1 0 27 0;
 #X connect 2 0 29 0;
@@ -660,6 +662,7 @@
 #X connect 6 0 8 0;
 #X connect 10 0 7 0;
 #X connect 11 0 7 1;
+#X connect 11 0 67 0;
 #X connect 12 0 9 0;
 #X connect 13 0 9 1;
 #X connect 14 0 9 2;
@@ -713,6 +716,7 @@
 #X connect 64 0 11 0;
 #X connect 65 0 10 0;
 #X connect 66 0 11 0;
+#X connect 67 0 68 0;
 #X restore 50 627 pd stereo-mixdown;
 #X f 32;
 #X connect 12 0 13 0;
