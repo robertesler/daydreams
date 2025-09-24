@@ -92,7 +92,6 @@
 #X text 464 621 We'll add a little of everything in chs 1 & 2;
 #X floatatom 444 505 5 0 0 0 - - - 0;
 #X obj 80 89 route start stop;
-#X msg 644 472 \; playback1-vol 1 \; playback2-vol 1 \; playback3-vol 1 \; playback5-vol 1 \; output-all-stereo 0.35 \;;
 #N canvas 63 102 1019 747 plackback-extended 0;
 #X obj 64 394 throw~ out;
 #X obj 64 231 readsf~;
@@ -211,6 +210,7 @@
 #X connect 52 0 34 0;
 #X restore 766 106 pd plackback-extended;
 #X msg 825 471 \; playback1 stop \; playback2 stop \; playback3 stop \; playback4 stop \; bend-steps 0 \; playback1-vol 1 \; playback2-vol 1 \; playback3-vol 1 \;;
+#X msg 644 472 \; playback1-vol 1 \; playback2-vol 1 \; playback3-vol 1 \; playback1a-vol 1 \; playback2a-vol 1 \; playback3a-vol 1 \; output-all-stereo 0.35 \;;
 #X connect 0 0 92 0;
 #X connect 2 0 5 1;
 #X connect 4 0 13 0;
@@ -224,7 +224,7 @@
 #X connect 14 0 13 1;
 #X connect 15 0 16 0;
 #X connect 16 0 20 0;
-#X connect 17 0 93 0;
+#X connect 17 0 95 0;
 #X connect 18 0 9 0;
 #X connect 20 0 14 0;
 #X connect 21 0 16 0;
@@ -278,7 +278,7 @@
 #X connect 61 0 60 0;
 #X connect 62 0 50 0;
 #X connect 63 0 9 0;
-#X connect 66 0 95 0;
+#X connect 66 0 94 0;
 #X connect 67 0 68 0;
 #X connect 68 0 83 0;
 #X connect 69 0 68 1;
