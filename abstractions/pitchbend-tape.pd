@@ -1,4 +1,4 @@
-#N canvas 872 127 692 711 12;
+#N canvas 872 127 728 819 12;
 #X floatatom 101 97 6 0 0 0 - - - 0;
 #X obj 71 468 *~;
 #X obj 224 394 line~;
@@ -44,15 +44,17 @@
 #X msg 287 433 \$1 200;
 #X text 151 97 <-- transposition in halftones;
 #X obj 232 27 inlet~;
-#X obj 164 646 outlet~;
+#X obj 113 731 outlet~;
 #X obj 470 39 loadbang;
 #X obj 101 72 inlet;
 #X obj 232 58 delwrite~ \$0-tape 5000;
 #X obj 71 531 delread4~ \$0-tape;
 #X obj 269 542 delread4~ \$0-tape;
 #X msg 470 65 \; window 14 \; delay 20;
-#X text 211 620 <--testing this...;
-#X obj 164 621 *~ 1.5;
+#X text 323 640 <--testing this...;
+#X obj 163 642 rev3~ 91 90 5000 93;
+#X obj 113 678 *~ 0.8;
+#X obj 164 678 *~ 0.7;
 #X connect 0 0 29 0;
 #X connect 1 0 12 0;
 #X connect 2 0 1 1;
@@ -71,6 +73,8 @@
 #X connect 13 0 14 0;
 #X connect 14 0 15 0;
 #X connect 15 0 53 0;
+#X connect 15 0 53 1;
+#X connect 15 0 54 0;
 #X connect 16 0 17 0;
 #X connect 16 0 26 0;
 #X connect 17 0 18 0;
@@ -101,4 +105,9 @@
 #X connect 47 0 0 0;
 #X connect 49 0 14 1;
 #X connect 50 0 20 1;
-#X connect 53 0 45 0;
+#X connect 53 0 55 0;
+#X connect 53 1 55 0;
+#X connect 53 2 55 0;
+#X connect 53 3 55 0;
+#X connect 54 0 45 0;
+#X connect 55 0 45 0;

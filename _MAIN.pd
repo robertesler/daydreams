@@ -1,8 +1,8 @@
-#N canvas 543 87 489 475 12;
+#N canvas 1448 51 489 475 12;
 #X declare -path ./abstractions;
 #X declare -path ./spat;
 #X floatatom 58 135 5 0 0 2 scene scene - 36;
-#N canvas 942 538 491 436 guts 1;
+#N canvas 942 538 491 436 guts 0;
 #X text 28 72 Initial testing phase of master patch.;
 #X obj 27 22 declare -path ./abstractions;
 #X obj 28 46 declare -path ./spat;
@@ -284,7 +284,7 @@
 #X text 540 663 turn bend-input-on 1 \; set the detection parameters \; turn on your method of detection \; set the input steps \, 2 = whole step up \, -2 = whole step down \, etc. 2500 = time period \;;
 #X obj 827 409 r pitchbending-reset;
 #X obj 370 187 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
-#X obj 29 272 output~;
+#X obj 30 289 output~;
 #N canvas 212 189 877 697 del 0;
 #X obj 191 31 inlet~;
 #X obj 162 504 outlet~;
@@ -813,7 +813,7 @@
 #X connect 46 0 8 0;
 #X connect 46 0 7 0;
 #X restore 28 302 pd reverb ssb;
-#N canvas 73 83 854 881 testing 0;
+#N canvas 1141 669 854 881 testing 0;
 #X obj 77 67 tabplay~ array1;
 #X obj 191 67 tabplay~ array2;
 #X obj 77 99 *~;
@@ -868,7 +868,6 @@
 #X obj 483 107 r test;
 #X obj 483 131 tgl 19 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
 #X msg 535 237 \; synthbender-reset bang \;;
-#X msg 134 24 0.1;
 #X msg 535 276 \; pitchbending-reset bang \;;
 #X msg 177 27 1;
 #X msg 548 335 \; bend-input-on 0 \;;
@@ -878,7 +877,8 @@
 #X text 81 6 E6 (88);
 #X msg 338 374 \; synthbender-pitchdetection-on 0 \; bend-input-on 0 \; mordent 0 \;;
 #X obj 338 302 del 9000;
-#X msg 32 474 \; synthbender-pitchdetection-on 1 \; freq 71 82 88 66 90 0 \; bend 1.2 1.2 1.2 1.2 1 1 \; pitchdetection-thresh 50 \; sustainTime 250 \; releaseTime 1000 \; attack 0.5 \; attackTime 500 \;, f 90;
+#X msg 134 24 0.5;
+#X msg 32 474 \; threshold-detector-on 1 \; bend-input-steps -3 800 \; threshold-detector 0.6 200 0.1 200 \;, f 90;
 #X connect 0 0 2 0;
 #X connect 1 0 4 0;
 #X connect 2 0 16 0;
@@ -892,7 +892,7 @@
 #X connect 9 0 40 0;
 #X connect 11 0 9 0;
 #X connect 12 0 10 0;
-#X connect 14 0 38 0;
+#X connect 14 0 37 0;
 #X connect 19 0 17 0;
 #X connect 19 0 16 0;
 #X connect 20 0 19 1;
@@ -902,11 +902,11 @@
 #X connect 25 0 15 0;
 #X connect 26 0 15 1;
 #X connect 27 0 28 0;
-#X connect 30 0 3 0;
-#X connect 30 0 5 0;
-#X connect 32 0 3 0;
-#X connect 32 0 5 0;
-#X connect 39 0 14 0;
+#X connect 31 0 3 0;
+#X connect 31 0 5 0;
+#X connect 38 0 14 0;
+#X connect 39 0 3 0;
+#X connect 39 0 5 0;
 #X restore 28 355 pd testing;
 #N canvas 459 493 555 430 scenetrigger 0;
 #X obj 90 73 adc~ 1 2 3;
@@ -928,6 +928,7 @@
 #X msg 249 190 1;
 #X obj 189 101 inlet;
 #X obj 185 260 outlet;
+#X obj 386 203 loadbang;
 #X connect 0 0 7 0;
 #X connect 1 0 2 0;
 #X connect 1 1 0 0;
@@ -937,6 +938,7 @@
 #X connect 4 0 5 0;
 #X connect 5 0 3 0;
 #X connect 6 0 1 0;
+#X connect 8 0 5 0;
 #X restore 89 316 pd debounce;
 #X obj 89 340 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 231 124 s trig-thresh;
@@ -955,10 +957,13 @@
 #X text 289 284 This is to be used with the \; MIDITrigger Processing Sketch;
 #X obj 382 211 sel 1;
 #X msg 382 235 \; pd dsp 1 \;;
+#X obj 231 45 loadbang;
+#X msg 231 69 20;
 #X connect 0 2 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 6 0;
 #X connect 3 0 4 0;
+#X connect 4 0 6 1;
 #X connect 5 0 8 0;
 #X connect 6 0 7 0;
 #X connect 7 0 5 0;
@@ -977,8 +982,9 @@
 #X connect 22 0 18 1;
 #X connect 22 0 26 0;
 #X connect 23 0 24 0;
-#X connect 24 0 10 0;
 #X connect 26 0 27 0;
+#X connect 28 0 29 0;
+#X connect 29 0 13 0;
 #X restore 29 99 pd scenetrigger;
 #N canvas 692 214 547 300 mix 0;
 #X obj 82 100 r~ synthbender;
