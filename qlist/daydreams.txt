@@ -611,6 +611,7 @@ threshold-detector .5 200 .1 200;
 86;
 scene 86;
 pitchbending-reset bang
+playback2 stop;
 playback2 open ../audio/a86.wav;
 playback2 start;
 87;

@@ -1,4 +1,4 @@
-#N canvas 84 189 977 723 12;
+#N canvas 733 271 977 723 12;
 #X floatatom 305 165 8 0 0 0 - - - 0;
 #X floatatom 409 165 7 0 0 0 - - - 0;
 #X floatatom 513 165 9 0 0 0 - - - 0;
@@ -44,6 +44,7 @@
 #X msg 249 190 1;
 #X obj 189 101 inlet;
 #X obj 185 260 outlet;
+#X obj 320 162 loadbang;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 1 1 0 0;
@@ -54,6 +55,7 @@
 #X connect 5 0 4 1;
 #X connect 6 0 3 0;
 #X connect 7 0 1 0;
+#X connect 9 0 6 0;
 #X restore 305 531 pd debounce;
 #X obj 305 589 outlet;
 #X obj 305 239 spigot;
@@ -86,6 +88,7 @@
 #X msg 249 190 1;
 #X obj 189 101 inlet;
 #X obj 185 260 outlet;
+#X obj 320 162 loadbang;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 1 1 0 0;
@@ -96,8 +99,9 @@
 #X connect 5 0 4 1;
 #X connect 6 0 3 0;
 #X connect 7 0 1 0;
+#X connect 9 0 6 0;
 #X restore 350 554 pd debounce;
-#N canvas 106 52 607 390 debounce 0;
+#N canvas 904 39 607 390 debounce 0;
 #X obj 185 236 spigot;
 #X obj 185 146 t b b;
 #X msg 185 168 0;
@@ -107,6 +111,7 @@
 #X msg 249 190 1;
 #X obj 189 101 inlet;
 #X obj 185 260 outlet;
+#X obj 320 162 loadbang;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 1 1 0 0;
@@ -117,6 +122,7 @@
 #X connect 5 0 4 1;
 #X connect 6 0 3 0;
 #X connect 7 0 1 0;
+#X connect 9 0 6 0;
 #X restore 396 531 pd debounce;
 #N canvas 106 52 607 390 debounce 0;
 #X obj 185 236 spigot;
@@ -128,6 +134,7 @@
 #X msg 249 190 1;
 #X obj 189 101 inlet;
 #X obj 185 260 outlet;
+#X obj 320 162 loadbang;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 1 1 0 0;
@@ -138,6 +145,7 @@
 #X connect 5 0 4 1;
 #X connect 6 0 3 0;
 #X connect 7 0 1 0;
+#X connect 9 0 6 0;
 #X restore 441 554 pd debounce;
 #N canvas 106 52 607 390 debounce 0;
 #X obj 185 236 spigot;
@@ -149,6 +157,7 @@
 #X msg 249 190 1;
 #X obj 189 101 inlet;
 #X obj 185 260 outlet;
+#X obj 320 162 loadbang;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 1 1 0 0;
@@ -159,6 +168,7 @@
 #X connect 5 0 4 1;
 #X connect 6 0 3 0;
 #X connect 7 0 1 0;
+#X connect 9 0 6 0;
 #X restore 487 531 pd debounce;
 #N canvas 106 52 607 390 debounce 0;
 #X obj 185 236 spigot;
@@ -170,6 +180,7 @@
 #X msg 249 190 1;
 #X obj 189 101 inlet;
 #X obj 185 260 outlet;
+#X obj 320 162 loadbang;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 1 1 0 0;
@@ -180,6 +191,7 @@
 #X connect 5 0 4 1;
 #X connect 6 0 3 0;
 #X connect 7 0 1 0;
+#X connect 9 0 6 0;
 #X restore 533 554 pd debounce;
 #X obj 350 613 outlet;
 #X obj 396 589 outlet;
