@@ -779,6 +779,7 @@ attackTime 50;
 synthbender-extra1 add spat-add bang;
 synthbender-extra1 add spatpgm-go bang;
 14000 synthbender-pitchdetection-on 0;
+bend-input-on 0;
 106;
 scene 106;
 synthbender-reset bang;
