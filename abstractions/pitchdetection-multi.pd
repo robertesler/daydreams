@@ -200,6 +200,7 @@
 #X obj 533 612 outlet;
 #X obj 305 137 sigmund~ -hop 4096 pitch env evenness quality;
 #X msg 673 238 \; pitchdetection-thresh 45 \;;
+#X msg 305 555;
 #X connect 0 0 34 0;
 #X connect 1 0 40 0;
 #X connect 6 0 52 0;
@@ -238,6 +239,7 @@
 #X connect 33 0 53 0;
 #X connect 34 0 39 0;
 #X connect 35 0 36 0;
+#X connect 35 0 54 0;
 #X connect 37 0 11 0;
 #X connect 38 0 37 1;
 #X connect 39 0 37 0;
