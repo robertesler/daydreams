@@ -1,4 +1,4 @@
-#N canvas 624 58 480 512 12;
+#N canvas 962 65 480 512 12;
 #X declare -path ./abstractions;
 #X declare -path ./spat;
 #X floatatom 58 135 5 0 0 2 scene scene - 36;
@@ -384,8 +384,8 @@
 #X msg 767 539 3 \, 0 150;
 #X obj 378 471 sel 0 1 2;
 #X msg 538 614 \; delTime2 5 \; myDel2-on 1 \; del2-begin 1 \;;
-#X obj 643 371 > 35;
-#X msg 378 497 \; myDel-on 0 \; myDel2-on 0 \; delTime 0 \; delTime2 0 \; myDel-pb 0 \; del2-begin 0 \; del-mono bang \; mordent-threshold 35 \;;
+#X obj 643 371 > 55;
+#X msg 378 497 \; myDel-on 0 \; myDel2-on 0 \; delTime 0 \; delTime2 0 \; myDel-pb 0 \; del2-begin 0 \; del-mono bang \; mordent-threshold 55 \;;
 #X connect 0 0 26 0;
 #X connect 0 0 37 1;
 #X connect 2 0 11 0;
