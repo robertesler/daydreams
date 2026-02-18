@@ -140,6 +140,7 @@ playback1 open ../audio/a26.wav;
 27;
 scene 27;
 reverb 0 4000;
+reverb-all 0 4000;
 4000 spatpgm 4;
 spatpgm-go bang;
 28;

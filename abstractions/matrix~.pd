@@ -935,7 +935,7 @@
 #X text 592 26 5;
 #X text 640 26 6;
 #X text 735 26 8;
-#X text 326 539 Only use 1 instance of this abstraction per patch. It is not setup to have multiple instances and will fail horrendously.;
+#X text 326 529 Only use 1 instance of this abstraction per patch. It is not setup to have multiple instances and will fail horrendously.;
 #N canvas 63 102 525 300 reset 0;
 #X msg 26 58 \; A0 0 \; A1 0 \; A2 0 \; A3 0 \; A4 0 \; A5 0 \; A6 0 \;;
 #X msg 80 58 \; B0 0 \; B1 0 \; B2 0 \; B3 0 \; B4 0 \; B5 0 \; B6 0 \;;
@@ -957,7 +957,7 @@
 #X connect 9 0 7 0;
 #X connect 9 0 8 0;
 #X restore 790 353 pd reset;
-#X text 327 464 This abstraction creates a 9 x 7 matrix. The first inlet must get three numbers a \, b and c. a = input # \, b = output # and c = linear amplitude (0-1). So for example \, [0 1 0.5( will turn on input 0 through output 1 at 50% (or 90 dB).;
+#X text 327 454 This abstraction creates a 9 x 7 matrix. The first inlet must get three numbers a \, b and c. a = input # \, b = output # and c = linear amplitude (0-1). So for example \, [0 1 0.5( will turn on input 0 through output 1 at 50% (or 90 dB).;
 #X connect 0 0 46 0;
 #X connect 1 0 47 0;
 #X connect 2 0 48 0;
