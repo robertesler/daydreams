@@ -360,7 +360,7 @@
 #X msg 87 217 step;
 #X floatatom 28 296 5 0 0 0 - - - 0;
 #X msg 132 216 auto;
-#X obj 187 220 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 186 238 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X floatatom 28 65 5 0 0 0 - - - 0;
 #X obj 186 295 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X msg 28 217 line \$1;
@@ -389,7 +389,7 @@
 #X obj 693 56 unpack 0 0;
 #X obj 324 294 del 5;
 #X obj 38 109 del 5;
-#X obj 187 193 r spatpgm-go;
+#X obj 186 193 r spatpgm-go;
 #X obj 44 136 s spatpgm-go;
 #X text 24 463 Read the spat config file here.;
 #X text 82 635 I have also reconfigured the spat.txt to work better with [text sequence]. Generally \, it behaves exactly as before but the text will look much different. I've kept the old spat.txt for reference.;
@@ -573,7 +573,6 @@
 #X obj 432 141 r~ inputL;
 #X obj 508 141 r~ inputR;
 #X obj 432 165 +~;
-#X obj 432 189 *~ 0.5;
 #X obj 432 213 outlet~;
 #X text 75 142 sampler is 1-6 (aka akai s1000);
 #X text 430 119 input is 7/8 (aka k&k input);
@@ -581,6 +580,7 @@
 #X obj 716 216 outlet~;
 #X obj 636 172 r~ reverbL;
 #X obj 716 172 r~ reverbR;
+#X obj 432 189 *~ 0.4;
 #X connect 6 0 0 0;
 #X connect 6 0 1 0;
 #X connect 6 0 2 0;
@@ -589,10 +589,10 @@
 #X connect 6 0 5 0;
 #X connect 7 0 9 0;
 #X connect 8 0 9 1;
-#X connect 9 0 10 0;
-#X connect 10 0 11 0;
+#X connect 9 0 17 0;
+#X connect 15 0 13 0;
 #X connect 16 0 14 0;
-#X connect 17 0 15 0;
+#X connect 17 0 10 0;
 #X restore 74 568 pd inputs;
 #X f 29;
 #X obj 50 544 r matrix;
@@ -603,7 +603,7 @@
 #X msg 448 366 1;
 #X floatatom 448 414 5 0 0 0 - - - 0;
 #X obj 448 437 s spatpgm;
-#N canvas 78 512 739 477 stereo-mixdown 0;
+#N canvas 78 512 739 477 stereo-mixdown 1;
 #X obj 19 30 inlet~;
 #X obj 72 30 inlet~;
 #X obj 125 30 inlet~;
