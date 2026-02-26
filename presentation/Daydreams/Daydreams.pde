@@ -20,6 +20,7 @@ int showOpcode = 0;
 
 PImage mac;
 int showMac;
+boolean macIsShowing = false;
 
 PImage sampler;
 int showSampler = 0;
@@ -30,13 +31,37 @@ int showAtariMega = 0;
 PImage reverb;
 int showReverb = 0;
 
-float fudge = .8;
+PImage audio;
+int showAudio = 0;
+boolean audioIsShowing = false;
+
+PImage mixer;
+int showMixer = 0;
+
+PImage arionFront;
+int showArionFront = 0;
+
+PImage arionBack;
+int showArionBack;
+
+PImage max1;
+int showMax1 = 0;
+
+PImage max2;
+int showMax2 = 0;
+
+int showMatrix = 0;
+
+int xColor = 0;
+
+float fudge = 1;
 int w = (int)(817 * fudge);
 int h = (int)(1059 * fudge) ;
 
 void setup() {
-  //it seems we have to hard code our values here
-  size(653, 847);
+  //it seems we have to hard code our values here 653, 847
+  windowResize(817, 1059);
+  windowResizable(true);
   String path = dataPath("");
   midi = loadImage(path + "/midi.gif");
   pedal = loadImage(path + "/pedal2.jpg");
@@ -49,13 +74,26 @@ void setup() {
   sampler = loadImage(path + "/AKAIS1000_large.jpg");
   atariMega = loadImage(path + "/AtariMegaST2.png");
   reverb = loadImage(path + "/reverb.jpg");
+  audio = loadImage(path + "/audio.gif");
+  mixer = loadImage(path + "/yamaha.jpg");
+  arionFront = loadImage(path + "/AudioMatrixFront.jpeg");
+  arionBack = loadImage(path + "/AudioMatrix.jpeg");
+  max1 = loadImage(path + "/max1.png");
+  max2 = loadImage(path + "/max2.png");
+}
+
+void windowResized() {
+  println(width, height);
+  fudge = (float)width/817;
+  println(fudge);
+  w = (int)(817 * fudge);
+  h = (int)(1059 * fudge) ;
 }
 
 void draw() {
-
+  
+  background(255);
   image(midi, 0, 0, w, h);
-  fill(0);
-  text(mouseX + " | " + mouseY, mouseX + 5, mouseY + 5); 
   
   if(showPedal % 2 == 1)
     image(pedal, 220, 275);
@@ -74,23 +112,91 @@ void draw() {
     
   if(showOpcode % 2 == 1)
     image(opcode, 270 * fudge, 650 * fudge, opcode.width * .5 * fudge, opcode.height * .5 * fudge);
-    
-  if(showMac % 2 == 1)
+
+  //only show the max images if the mac is showing
+  if(macIsShowing && showMax1 % 2 == 1)
+    image(max1, 50 * fudge, 200 * fudge, max1.width * .6 * fudge, max1.height * .6 * fudge);
+  
+  if(showMax2 % 2 == 1)
+    image(max2, 400 * fudge, 200 * fudge, max1.width * .6 * fudge, max1.height * .6 * fudge);
+  
+  //This image will allow the max images to display, click to the immediate left of right of the Mac box
+  if(macIsShowing && showMac % 2 == 1)
+  {
     image(mac, 270 * fudge, 600 * fudge, mac.width * .1 * fudge, mac.height * .1 * fudge);
+    macIsShowing = true;
+  }
+  else
+  {
+     macIsShowing = false; 
+  }
     
   if(showSampler % 2 == 1)
     image(sampler, 400 * fudge, 410 * fudge, sampler.width * .1 * fudge, sampler.height * .1 * fudge);
-    
+  
+  //no image for this so show a ?
+  if(showMatrix % 2 == 1)
+  {
+    fill(0);
+    textSize(160);
+    text("?", 600 * fudge, 540 * fudge);
+  }
+  
   if(showAtariMega % 2 == 1)
     image(atariMega, 410 * fudge, 600 * fudge, atariMega.width * .25 * fudge, atariMega.height * .25 * fudge);
     
   if(showReverb % 2 == 1)
     image(reverb, 400 * fudge, 620 * fudge, reverb.width * .5 * fudge, reverb.height * .5 * fudge);
+  
+  //change our color of the X on the audio slide (which closes the slide)
+  if(mouseX > 50 * fudge && mouseX < 75 && audioIsShowing)
+  {
+    xColor = 50;
+  }
+  else
+  {
+    xColor = 0;  
+  }
+  
+  //show our audio slide and associated images
+  if(showAudio % 2 == 1)
+  {
+    image(audio, 0, 0, w, h);
+    audioIsShowing = true;
+    fill(xColor);
+    textSize(24);
+    text("X", 50, 50);
+  }
+  else
+  {
+    audioIsShowing = false;
+  }
+  
+  if(audioIsShowing && showMixer % 2 == 1)
+    image(mixer, 235 * fudge, 600 * fudge,  mixer.width * .4 * fudge, mixer.height * .4 * fudge);
+  
+  if(audioIsShowing && showArionFront % 2 == 1)
+    image(arionFront, 25 * fudge, 400 * fudge, arionFront.width * .3 * fudge, arionFront.height * .3 * fudge);
+    
+  if(audioIsShowing && showArionBack % 2 == 1)
+    image(arionBack, 475 * fudge, 400 * fudge, arionBack.width * .3 * fudge, arionBack.height * .3 * fudge);
+    
+  
+  fill(0);
+  textSize(12);
+  text(mouseX + " | " + mouseY, mouseX + 5, mouseY + 5); 
 }
 
 void mousePressed() {
   
-  //first row
+  //X for Audio slide
+  if(mouseX > 50 * fudge && mouseX < 75 && audioIsShowing)
+  {
+    println("close audio");
+    showAudio++;
+  }
+  
+  //first colum
   if(mouseX > 50 * fudge && mouseX < 140 * fudge)
   {
     if(mouseY > 720 * fudge && mouseY < 770 * fudge)
@@ -100,7 +206,7 @@ void mousePressed() {
     }
   }
   
-  //second row k&k
+  //second colum k&k
   if(mouseX > 135 * fudge && mouseX < 400 * fudge)
   {
      if(mouseY > 370 * fudge && mouseY < 410 * fudge)
@@ -110,7 +216,7 @@ void mousePressed() {
      }
   }
   
-  //Third row
+  //Third colum
   if(mouseX > 220 * fudge && mouseX < 310 * fudge)
   {
     //pedal
@@ -136,10 +242,10 @@ void mousePressed() {
     }
   }
   
-  //fourth row Opcode and Mac
+  //fourth colum Opcode and Mac
   if(mouseX > 270 * fudge && mouseX < 440 * fudge)
   {
-    //opcodew
+    //opcode
     if(mouseY > 860 * fudge && mouseY < 900 * fudge)
     {
       println("opcode");
@@ -152,8 +258,23 @@ void mousePressed() {
       showMac++;
     }
   }
+  //max images
+  if(mouseY > 945 * fudge && mouseY < 1020 * fudge && macIsShowing)
+  {
+    //show max images
+      if(mouseX > 50 * fudge && mouseX < 270 * fudge)
+      {
+        println("max1");
+        showMax1++;
+      }
+      if(mouseX > 440 * fudge && mouseX < 800 * fudge)
+      {
+        println("max2");
+        showMax2++;
+      }
+  }
   
-  //fifth rwo atari
+  //fifth colum atari
   if(mouseX > 450 * fudge && mouseX < 530 * fudge)
   {
      if(mouseY > 610 * fudge && mouseY < 660 * fudge)
@@ -171,6 +292,12 @@ void mousePressed() {
        println("sampler");
        showSampler++;
      }
+     
+    if(mouseY > 500 * fudge && mouseY < 550 * fudge)
+    {
+       println("matrixe 360"); 
+       showMatrix++;
+    }
   }
   
   //seventh row reverb and arion
@@ -181,6 +308,38 @@ void mousePressed() {
       println("reverb");
       showReverb++;
     }
+    //audio slide
+    if(mouseY > 610 * fudge && mouseY < 655 * fudge)
+    {
+      println("audio");
+      showAudio++;
+    }
+  }
+  
+  //Audio layer
+  if(mouseX > 235 * fudge && mouseX < 555 * fudge && audioIsShowing)
+  {
+    //show mixer
+    if(mouseY > 725 * fudge && mouseY < 805 * fudge)
+    {
+      showMixer++;
+    }
+    
+    //show our Arion hardware
+    if(mouseY > 530 * fudge && mouseY < 615 * fudge)
+    {
+       if(mouseX > 275 * fudge && mouseX <  385 * fudge)
+       {
+         println("Arion Front");
+         showArionFront++;
+       }
+       if(mouseX > 385 * fudge && mouseX <  540 * fudge)
+       {
+         println("Arion Back");
+         showArionBack++;
+       }
+    }
+    
   }
   
 }
